@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CZmotos — Motos y Triciclos para Cuba desde Miami</title>
+<meta name="description" content="Envío de motos y triciclos nuevos desde Miami a todas las provincias de Cuba. Financiamiento disponible. Más de 500 entregas realizadas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2C43; --navy-dk:#071D2D;
+  --coral:#D63B1F; --coral-h:#B83018;
+  --gold:#C4852A;
+  --sand:#F4EDE0; --sand-lt:#FAF7F2;
+  --txt:#1C1C1C; --txt-m:#4E6070; --txt-l:#8B9BAA;
+  --brd:#DDD5CA; --wa:#25D366; --wa-h:#1eb957;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--sand-lt);color:var(--txt);overflow-x:hidden}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+a{touch-action:manipulation}
+/* iOS: previene zoom al tocar inputs (requiere min 16px) */
+input,select,textarea{font-size:16px}
+.bc{font-family:'Barlow Condensed',sans-serif}
+/* RENDIMIENTO: cada sección se renderiza solo cuando entra en pantalla */
+.cv{content-visibility:auto;contain-intrinsic-size:auto 600px}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-thumb{background:var(--coral);border-radius:3px}
+
+/* ══ HEADER ══ */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(7,29,45,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:background .3s}
+header.sc{background:rgba(7,29,45,.97);border-bottom:1px solid rgba(255,255,255,.06)}
+.hdr-in{max-width:1200px;margin:0 auto;padding:0 22px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;background:none;border:none;user-select:none}
+.logo-ic{width:34px;height:34px;background:var(--coral);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.logo-tx{font-size:23px;font-weight:700;color:#fff;letter-spacing:1px}
+.logo-tx b{color:var(--coral);font-weight:700}
+nav.dsk{display:flex;align-items:center;gap:22px}
+nav.dsk button{background:none;border:none;color:rgba(255,255,255,.72);font-size:13px;font-weight:500;padding:0;white-space:nowrap;transition:color .2s}
+nav.dsk button:hover{color:#fff}
+.btn-wa{background:var(--wa);color:#fff;border:none;border-radius:8px;padding:8px 16px;font-weight:600;font-size:13px;display:inline-flex;align-items:center;gap:7px;transition:background .2s;white-space:nowrap}
+.btn-wa:hover{background:var(--wa-h)}
+.burger{display:none;background:none;border:none;color:#fff;padding:4px}
+.mobnav{display:none;background:var(--navy-dk);padding:8px 22px 18px;border-top:1px solid rgba(255,255,255,.07)}
+.mobnav.open{display:block}
+.mobnav button{display:block;width:100%;text-align:left;background:none;border:none;color:rgba(255,255,255,.82);font-size:16px;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.mobnav .btn-wa{width:100%;margin-top:14px;justify-content:center;padding:13px;font-size:15px;border-radius:9px;border:none}
+
+/* ══ HERO ══ */
+.hero{background:linear-gradient(135deg,var(--navy-dk) 0%,var(--navy) 55%,#163a55 100%);min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding-top:64px}
+.hero-bar{position:absolute;left:0;top:8%;bottom:8%;width:5px;background:linear-gradient(to bottom,transparent,var(--coral) 40%,var(--coral) 60%,transparent);border-radius:0 3px 3px 0}
+.hero-moto{position:absolute;right:-3%;top:50%;transform:translateY(-50%);width:44%;max-width:540px;opacity:.045;pointer-events:none}
+.hero-in{max-width:1200px;margin:0 auto;padding:60px 24px 90px;position:relative;z-index:1;width:100%}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:4.5px;text-transform:uppercase;color:var(--coral);margin-bottom:18px}
+.h-l1{display:block;font-size:clamp(64px,11vw,116px);font-weight:800;color:#fff;line-height:.92;letter-spacing:-1.5px}
+.h-l2{display:block;font-size:clamp(50px,8.5vw,90px);font-weight:800;color:var(--coral);line-height:.92;letter-spacing:-1.5px}
+.h-l3{display:block;font-size:clamp(20px,3vw,32px);font-weight:600;color:rgba(255,255,255,.48);margin-top:12px}
+.hero-p{font-size:17px;color:rgba(255,255,255,.67);line-height:1.75;margin:22px 0 34px;max-width:520px}
+.hero-p b{color:rgba(255,255,255,.9)}
+.hero-cta{display:flex;gap:13px;margin-bottom:52px;flex-wrap:wrap}
+.btn-coral{background:var(--coral);color:#fff;border:none;border-radius:10px;padding:14px 30px;font-weight:700;font-size:15px;transition:background .2s;letter-spacing:.3px}
+.btn-coral:hover{background:var(--coral-h)}
+.btn-wa-lg{background:var(--wa);color:#fff;border:none;border-radius:10px;padding:14px 26px;font-weight:700;font-size:15px;display:inline-flex;align-items:center;gap:8px;transition:background .2s}
+.btn-wa-lg:hover{background:var(--wa-h)}
+.stats{display:flex;gap:36px;flex-wrap:wrap}
+.stat-n{font-size:40px;font-weight:700;color:#fff;line-height:1}
+.stat-l{font-size:12px;color:rgba(255,255,255,.45);margin-top:3px}
+.hero-wave{position:absolute;bottom:-1px;left:0;right:0}
+.hero-wave svg{display:block;width:100%;height:70px}
+
+/* ══ SECCIONES ══ */
+section{padding:80px 24px}
+.wrap{max-width:1100px;margin:0 auto}
+.wrap-lg{max-width:1200px;margin:0 auto}
+.sec-t{text-align:center;margin-bottom:44px}
+.sec-ey{font-size:11px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--coral);margin-bottom:8px}
+.sec-h{font-size:clamp(34px,5vw,54px);font-weight:700;color:var(--navy);line-height:1.05;letter-spacing:-.5px}
+.sec-s{margin:12px auto 0;font-size:16px;color:var(--txt-m);max-width:580px;line-height:1.67}
+.lt .sec-ey{color:rgba(255,255,255,.5)}
+.lt .sec-h{color:#fff}
+.lt .sec-s{color:rgba(255,255,255,.62)}
+
+/* NOSOTROS */
+#nosotros{background:var(--sand-lt)}
+.nos-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.nos-img{border-radius:18px;overflow:hidden;box-shadow:0 16px 50px rgba(0,0,0,.13);margin-bottom:14px}
+.nos-img img{width:100%;height:290px;object-fit:cover}
+.nos-badges{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.nbadge{background:#fff;border-radius:11px;padding:13px 14px;display:flex;gap:10px;align-items:flex-start}
+.nbadge span{font-size:20px;flex-shrink:0}
+.nbadge h5{font-size:13px;font-weight:600;color:var(--txt)}
+.nbadge p{font-size:11px;color:var(--txt-l);margin-top:2px;line-height:1.45}
+.nos-h{font-size:clamp(34px,4vw,50px);font-weight:700;color:var(--navy);line-height:1.06;letter-spacing:-.5px;margin-bottom:18px}
+.nos-p{font-size:16px;color:var(--txt-m);line-height:1.8;margin-bottom:16px}
+.btn-out{background:transparent;color:var(--navy);border:2px solid var(--brd);border-radius:9px;padding:10px 20px;font-weight:600;font-size:14px;transition:all .2s}
+.btn-out:hover{background:var(--sand);border-color:var(--navy)}
+.btn-coral-sm{background:var(--coral);color:#fff;border:none;border-radius:9px;padding:12px 22px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:7px;transition:background .2s}
+.btn-coral-sm:hover{background:var(--coral-h)}
+
+/* CATÁLOGO + CARRUSEL */
+#motos{background:#fff}
+#triciclos{background:var(--sand)}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(262px,1fr));gap:22px}
+.cat-grid.tric{max-width:780px;margin:0 auto;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 3px 16px rgba(0,0,0,.07);transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 42px rgba(0,0,0,.13)}
+.card-img{position:relative;height:205px;background:var(--sand);touch-action:pan-y;user-select:none}
+.ci-img{width:100%;height:100%;object-fit:cover;transition:opacity .18s}
+.ci-img.fading{opacity:.35}
+.ci-nav{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:none;background:rgba(7,29,45,.55);color:#fff;font-size:17px;line-height:1;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s,background .2s;z-index:2}
+.card-img:hover .ci-nav{opacity:1}
+.ci-nav:hover{background:rgba(7,29,45,.85)}
+.ci-prev{left:8px}.ci-next{right:8px}
+.ci-dots{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:5px;z-index:2}
+.ci-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);border:none;padding:0;transition:background .2s,transform .2s}
+.ci-dot.on{background:#fff;transform:scale(1.25)}
+@media(pointer:coarse){.ci-nav{opacity:1;background:rgba(7,29,45,.4)}}
+.badge{position:absolute;top:11px;left:11px;background:var(--coral);color:#fff;border-radius:20px;padding:4px 11px;font-size:11px;font-weight:600;z-index:2}
+.nostock{position:absolute;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;z-index:3}
+.card-bd{padding:18px 18px 20px;flex:1;display:flex;flex-direction:column}
+.card-n{font-size:24px;font-weight:700;color:var(--navy);margin-bottom:5px}
+.card-d{font-size:13px;color:var(--txt-l);line-height:1.62;margin-bottom:12px;flex:1}
+.specs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.spec{background:var(--sand-lt);color:var(--txt-m);border-radius:20px;padding:3px 9px;font-size:11px;font-weight:500}
+.dlv{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--txt-m);margin-bottom:13px}
+.dlv svg{flex-shrink:0}
+.card-ft{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--brd)}
+.price-l{font-size:11px;color:var(--txt-l)}
+.price{font-size:30px;font-weight:700;color:var(--navy);line-height:1}
+.btn-cns{background:var(--coral);color:#fff;border:none;border-radius:9px;padding:10px 16px;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:6px;transition:background .2s;flex-shrink:0}
+.btn-cns:hover{background:var(--coral-h)}
+.cat-more{text-align:center;margin-top:38px}
+.cat-more p{color:var(--txt-m);font-size:14px;margin-bottom:11px}
+.cat-empty{grid-column:1/-1;text-align:center;color:var(--txt-l);padding:30px 0}
+
+/* PROCESO */
+#proceso{background:var(--navy)}
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:15px;margin-bottom:40px}
+.proc{background:rgba(255,255,255,.05);border-radius:13px;padding:22px 16px;border:1px solid rgba(255,255,255,.08)}
+.proc-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.proc-n{font-size:38px;font-weight:700;color:var(--coral);line-height:1}
+.proc-ic{font-size:24px}
+.proc h4{font-size:20px;font-weight:700;color:#fff;margin-bottom:7px}
+.proc p{font-size:13px;color:rgba(255,255,255,.57);line-height:1.65}
+
+/* FINANCIAMIENTO */
+#financiamiento{background:var(--sand-lt)}
+.fin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.fin{background:#fff;border-radius:15px;padding:26px 22px;box-shadow:0 3px 18px rgba(0,0,0,.07);border-top:4px solid var(--coral)}
+.fin-ic{font-size:34px;margin-bottom:10px}
+.fin-tag{display:inline-block;background:var(--sand);color:var(--navy);border-radius:20px;padding:3px 11px;font-size:11px;font-weight:700;margin-bottom:9px}
+.fin h3{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:7px}
+.fin>p{font-size:13px;color:var(--txt-m);line-height:1.65;margin-bottom:14px}
+.fin ul{list-style:none}
+.fin li{display:flex;align-items:flex-start;gap:8px;margin-bottom:7px;font-size:13px;color:var(--txt-m)}
+.fin li::before{content:"✓";color:var(--coral);font-weight:700;flex-shrink:0}
+.btn-fin{width:100%;margin-top:16px;background:transparent;color:var(--coral);border:2px solid var(--coral);border-radius:9px;padding:9px;font-weight:600;font-size:13px;transition:all .2s}
+.btn-fin:hover{background:var(--coral);color:#fff}
+.fin-note{text-align:center;margin-top:26px;font-size:13px;color:var(--txt-l)}
+
+/* PROVINCIAS */
+#provincias{background:#fff}
+.prov-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;max-width:1000px;margin:0 auto}
+.prov{background:var(--sand-lt);border-radius:9px;padding:10px 13px;display:flex;justify-content:space-between;align-items:center;gap:6px}
+.prov b{font-size:12px;font-weight:600;color:var(--txt);display:flex;align-items:center;gap:6px}
+.prov b::before{content:"📍";font-size:11px}
+.prov span{font-size:10px;color:var(--txt-l);white-space:nowrap}
+.prov-note{max-width:1000px;margin:20px auto 0;background:var(--sand);border-radius:11px;padding:14px 18px;display:flex;gap:11px;align-items:flex-start}
+.prov-note p{font-size:13px;color:var(--txt-m);line-height:1.65}
+
+/* TESTIMONIOS */
+#testimonios{background:var(--navy)}
+.tst-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.tst{background:rgba(255,255,255,.06);border-radius:13px;padding:20px 18px;border:1px solid rgba(255,255,255,.08)}
+.tst-st{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:12px}
+.tst-tx{font-size:13.5px;color:rgba(255,255,255,.74);line-height:1.72;margin-bottom:14px;font-style:italic}
+.tst-ft{border-top:1px solid rgba(255,255,255,.09);padding-top:11px}
+.tst-n{font-size:13px;font-weight:600;color:#fff}
+.tst-l{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px}
+.tst-cta{text-align:center;margin-top:32px}
+.btn-ghost{background:transparent;color:rgba(255,255,255,.72);border:2px solid rgba(255,255,255,.22);border-radius:9px;padding:10px 22px;font-weight:600;font-size:13px;transition:all .2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.5);color:#fff}
+
+/* GALERÍA */
+#galeria{background:var(--sand-lt)}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gal{border-radius:12px;overflow:hidden;position:relative;height:175px}
+.gal.big{height:205px}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.gal:hover img{transform:scale(1.06)}
+.gal-l{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.62));padding:8px 12px;font-size:11px;color:#fff;font-weight:500}
+.gal-note{text-align:center;margin-top:18px;font-size:13px;color:var(--txt-l)}
+
+/* FAQ */
+#faq{background:#fff}
+.faq-wrap{max-width:740px;margin:0 auto}
+.faq{border-bottom:1px solid var(--brd)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 4px;gap:14px;cursor:pointer;background:none;border:none;width:100%;text-align:left}
+.faq-q h4{font-size:15px;font-weight:600;color:var(--txt);flex:1;line-height:1.4;transition:color .2s}
+.faq-q .chev{color:var(--txt-l);transition:transform .25s;flex-shrink:0;font-size:13px}
+.faq.open .faq-q h4{color:var(--coral)}
+.faq.open .chev{transform:rotate(180deg);color:var(--coral)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 4px}
+.faq.open .faq-a{max-height:240px;padding-bottom:16px}
+.faq-a p{font-size:14px;color:var(--txt-m);line-height:1.78}
+.faq-cta{margin-top:34px;background:var(--sand);border-radius:13px;padding:18px 20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.faq-cta>div{flex:1;min-width:200px}
+.faq-cta h5{font-size:15px;font-weight:600;color:var(--navy);margin-bottom:3px}
+.faq-cta p{font-size:13px;color:var(--txt-m)}
+
+/* FORMULARIO */
+#contacto{background:var(--navy)}
+.frm{max-width:580px;margin:0 auto;background:rgba(255,255,255,.05);border-radius:15px;padding:28px 24px;border:1px solid rgba(255,255,255,.08)}
+.frm-row{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:13px}
+.frm label{font-size:12px;font-weight:600;color:rgba(255,255,255,.52);display:block;margin-bottom:5px}
+.frm input,.frm select,.frm textarea{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:9px;padding:11px 13px;font-size:14px;color:#fff;outline:none;font-family:inherit;transition:border-color .2s}
+.frm input:focus,.frm select:focus,.frm textarea:focus{border-color:rgba(255,255,255,.35)}
+.frm select option{color:#1a1a1a;background:#fff}
+.frm textarea{height:76px;resize:vertical}
+.frm-fld{margin-bottom:13px}
+.btn-send{width:100%;background:var(--coral);color:#fff;border:none;border-radius:10px;padding:13px;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;margin-top:5px}
+.btn-send:hover{background:var(--coral-h)}
+.frm-note{text-align:center;margin-top:10px;font-size:11px;color:rgba(255,255,255,.28)}
+.frm-ok{display:none;text-align:center;padding:38px 28px}
+.frm-ok.show{display:block}
+.frm-ok .ic{font-size:46px;margin-bottom:14px}
+.frm-ok h3{font-size:28px;color:#fff;margin-bottom:9px}
+.frm-ok p{color:rgba(255,255,255,.63);font-size:14px;line-height:1.65}
+
+/* FOOTER */
+footer{background:var(--navy-dk);padding:46px 24px 26px;border-top:3px solid var(--coral)}
+.ft-grid{max-width:1100px;margin:0 auto 36px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:38px}
+.ft-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.73;max-width:280px;margin:13px 0 16px}
+.ft-h{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.36);margin-bottom:13px}
+.ft-lnk{display:block;background:none;border:none;color:rgba(255,255,255,.53);font-size:13px;padding:5px 0;transition:color .2s;text-align:left;width:100%}
+.ft-lnk:hover{color:#fff}
+.ft-txt{font-size:13px;color:rgba(255,255,255,.45);line-height:1.87}
+.ft-bot{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.07);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.ft-bot p{font-size:12px;color:rgba(255,255,255,.26)}
+
+/* WHATSAPP FLOTANTE */
+#wafloat{position:fixed;bottom:26px;right:22px;z-index:900;background:var(--wa);color:#fff;border:none;border-radius:50px;padding:15px;box-shadow:0 4px 18px rgba(37,211,102,.42);display:flex;align-items:center;transition:opacity .3s,transform .3s,background .2s;opacity:0;transform:translateY(16px);pointer-events:none}
+#wafloat.vis{opacity:1;transform:translateY(0);pointer-events:auto}
+#wafloat:hover{background:var(--wa-h)}
+#wafloat svg{width:22px;height:22px}
+
+/* ══ ADMIN ══ */
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.78);z-index:2000;display:none;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(6px)}
+.ov.show{display:flex}
+.adm-bx{background:#fff;border-radius:16px;width:100%;max-width:820px;max-height:90vh;overflow:auto;box-shadow:0 24px 64px rgba(0,0,0,.45)}
+.adm-bx.sm{max-width:370px;padding:34px 28px;text-align:center}
+.adm-bx.sm .ic{font-size:38px;margin-bottom:10px}
+.adm-bx.sm h2{font-size:28px;color:var(--navy);margin-bottom:5px}
+.adm-bx.sm>p{font-size:13px;color:var(--txt-m);margin-bottom:22px}
+.adm-inp{width:100%;border:1px solid var(--brd);border-radius:8px;padding:10px 12px;font-size:13px;outline:none;font-family:inherit;transition:border-color .2s}
+.adm-inp:focus{border-color:var(--coral)}
+#admPass{padding:12px 13px;font-size:14px;border-width:2px;margin-bottom:10px}
+#admErr{font-size:12px;color:#e00;margin-bottom:8px;display:none}
+.adm-btn{width:100%;background:var(--coral);color:#fff;border:none;border-radius:9px;padding:12px;font-weight:700;font-size:14px;transition:background .2s;margin-bottom:8px}
+.adm-btn:hover{background:var(--coral-h)}
+.adm-cancel{width:100%;background:transparent;color:var(--txt-m);border:1px solid var(--brd);border-radius:9px;padding:10px;font-weight:500;font-size:13px}
+.adm-hd{padding:18px 22px;background:var(--navy);border-radius:16px 16px 0 0;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.adm-hd span{font-size:22px;font-weight:700;color:#fff}
+.adm-exit{background:rgba(255,255,255,.1);border:none;border-radius:7px;padding:7px 13px;color:rgba(255,255,255,.73);font-size:12px;font-weight:600}
+.adm-tabs{padding:14px 22px;border-bottom:1px solid var(--brd);display:flex;gap:10px;align-items:center}
+.adm-tab{background:var(--sand);color:var(--txt-m);border:none;border-radius:7px;padding:8px 17px;font-weight:600;font-size:13px}
+.adm-tab.on{background:var(--navy);color:#fff}
+.adm-add{margin-left:auto;background:var(--coral);color:#fff;border:none;border-radius:7px;padding:8px 15px;font-weight:700;font-size:13px}
+.adm-add:hover{background:var(--coral-h)}
+.adm-list{padding:14px 22px}
+.adm-row{display:flex;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--brd)}
+.adm-thumb{width:68px;height:48px;border-radius:8px;overflow:hidden;background:var(--sand);flex-shrink:0;position:relative}
+.adm-thumb img{width:100%;height:100%;object-fit:cover}
+.adm-thumb .nfotos{position:absolute;bottom:2px;right:2px;background:rgba(7,29,45,.8);color:#fff;font-size:9px;font-weight:700;border-radius:4px;padding:1px 4px}
+.adm-info{flex:1;min-width:0}
+.adm-name{font-weight:600;font-size:14px;color:var(--txt);margin-bottom:2px}
+.adm-meta{font-size:13px;color:var(--txt-m)}
+.adm-meta b{font-weight:700;color:var(--coral)}
+.adm-ns{margin-left:8px;background:#fff0ee;color:#d00;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:600}
+.adm-act{display:flex;gap:7px;flex-shrink:0}
+.adm-edit{background:var(--sand-lt);border:none;border-radius:7px;padding:7px 12px;color:var(--txt-m);font-size:13px}
+.adm-edit:hover{background:var(--sand)}
+.adm-del{background:#fff2f0;border:none;border-radius:7px;padding:7px 12px;color:var(--coral);font-size:13px}
+.adm-del:hover{background:#ffe0dc}
+.adm-tip{padding:11px 22px 18px;background:var(--sand-lt);border-radius:0 0 16px 16px;border-top:1px solid var(--brd);font-size:11px;color:var(--txt-l)}
+.adm-empty{color:var(--txt-l);text-align:center;padding:28px 0}
+.adm-form{padding:24px 22px}
+.adm-form-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.adm-form-hd h3{font-size:24px;color:var(--navy)}
+.adm-x{background:none;border:none;color:var(--txt-m);font-size:20px;line-height:1}
+.adm-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.adm-fld label{font-size:12px;font-weight:600;color:var(--txt-m);display:block;margin-bottom:4px}
+.adm-fld.full{grid-column:span 2}
+.adm-fld textarea{height:68px;resize:vertical}
+.adm-chk{grid-column:span 2;display:flex;align-items:center;gap:8px}
+.adm-chk input{width:16px;height:16px;cursor:pointer}
+.adm-chk label{font-size:13px;color:var(--txt);cursor:pointer}
+.adm-form-ft{display:flex;gap:10px;margin-top:18px;justify-content:flex-end}
+.adm-sv{background:var(--coral);color:#fff;border:none;border-radius:8px;padding:10px 22px;font-weight:700;font-size:13px}
+.adm-sv:hover{background:var(--coral-h)}
+.adm-sv:disabled{opacity:.6;cursor:wait}
+.adm-cn{background:transparent;color:var(--txt-m);border:1px solid var(--brd);border-radius:8px;padding:10px 20px;font-weight:500;font-size:13px}
+
+/* FOTOS EN ADMIN */
+.photos-fld{grid-column:span 2}
+.photos-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:4px}
+.ph-slot{position:relative;aspect-ratio:4/3;border-radius:9px;overflow:hidden;background:var(--sand-lt);border:2px dashed var(--brd)}
+.ph-slot img{width:100%;height:100%;object-fit:cover}
+.ph-slot.filled{border-style:solid;border-color:var(--brd)}
+.ph-slot.first::after{content:"Principal";position:absolute;top:3px;left:3px;background:var(--navy);color:#fff;font-size:8px;font-weight:700;border-radius:4px;padding:1px 5px}
+.ph-rm{position:absolute;top:3px;right:3px;width:19px;height:19px;border-radius:50%;border:none;background:rgba(0,0,0,.6);color:#fff;font-size:11px;line-height:1;display:flex;align-items:center;justify-content:center}
+.ph-rm:hover{background:#d00}
+.ph-add{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:100%;height:100%;background:none;border:none;color:var(--txt-l);font-size:11px;font-weight:600}
+.ph-add span{font-size:19px;color:var(--coral)}
+.ph-add:hover{background:var(--sand)}
+.ph-up{display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:10px;color:var(--txt-m);text-align:center;padding:4px}
+.ph-hint{font-size:11px;color:var(--txt-l);margin-top:6px}
+#upStatus{font-size:12px;color:var(--coral);font-weight:600;margin-top:6px;display:none}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:768px){
+  nav.dsk{display:none}
+  .burger{display:flex}
+  .nos-grid{grid-template-columns:1fr;gap:28px}
+  .fin-grid{grid-template-columns:1fr}
+  .tst-grid{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:1fr 1fr}
+  .prov-grid{grid-template-columns:1fr 1fr}
+  .ft-grid{grid-template-columns:1fr}
+  .frm-row{grid-template-columns:1fr}
+  .adm-grid{grid-template-columns:1fr}
+  .adm-fld.full,.adm-chk,.photos-fld{grid-column:span 1}
+  .photos-grid{grid-template-columns:repeat(3,1fr)}
+  .hero-cta{flex-direction:column}
+  .hero-cta .btn-coral,.hero-cta .btn-wa-lg{width:100%;justify-content:center;padding:16px;font-size:16px}
+  .stats{gap:18px}
+  section{padding:60px 18px}
+  .hero-in{padding:40px 18px 70px}
+  .stat-n{font-size:32px}
+  .card-img{height:220px}
+  .card-n{font-size:22px}
+  .price{font-size:26px}
+  .btn-cns{padding:12px 14px;font-size:14px}
+  .mobnav button{padding:14px 0;font-size:17px;min-height:48px}
+  .faq-q{padding:18px 4px;min-height:52px}
+  .fin{padding:22px 18px}
+  .proc{padding:20px 14px}
+  .frm{padding:22px 18px}
+  .frm input,.frm select,.frm textarea{padding:13px;font-size:16px}
+  .btn-send{padding:16px;font-size:16px}
+  .adm-bx{border-radius:12px;max-height:95vh}
+  .adm-bx.sm{max-width:92vw;padding:28px 20px}
+  .adm-row{padding:14px 0}
+  .adm-edit,.adm-del{padding:10px 14px;font-size:14px}
+  .adm-inp{padding:12px;font-size:16px}
+  #wafloat{bottom:max(22px,env(safe-area-inset-bottom,0px));right:16px}
+  footer{padding:40px 18px 22px}
+  .nos-img img{height:220px}
+  .gal{height:155px}
+  .gal.big{height:175px}
+}
+@media(max-width:480px){
+  .tst-grid{grid-template-columns:1fr}
+  .prov-grid{grid-template-columns:1fr}
+  .nos-badges{grid-template-columns:1fr}
+  .photos-grid{grid-template-columns:repeat(3,1fr);gap:6px}
+  .stat-n{font-size:28px}
+  .stat-l{font-size:11px}
+  .card-ft{flex-direction:column;gap:10px;align-items:stretch}
+  .card-ft>div{display:flex;align-items:center;justify-content:space-between}
+  .btn-cns{justify-content:center;width:100%;padding:14px;font-size:15px}
+  .sec-h{font-size:clamp(28px,7vw,44px)}
+  .faq-cta{flex-direction:column;text-align:center}
+  .faq-cta .btn-coral-sm{width:100%;justify-content:center}
+  .hero-p{font-size:15px}
+  .adm-act{gap:5px}
+  .adm-edit,.adm-del{padding:10px 12px}
+  .prov-note{flex-direction:column;gap:6px}
+}
+@media(max-width:380px){
+  .h-l1{font-size:52px}
+  .h-l2{font-size:42px}
+  .h-l3{font-size:18px}
+  .hero-in{padding:30px 14px 60px}
+  section{padding:48px 14px}
+  .card-bd{padding:14px 14px 16px}
+  .adm-form{padding:18px 14px}
+  .adm-list{padding:10px 14px}
+  .adm-tabs{padding:10px 14px}
+}
+@supports(padding:max(0px)){
+  body{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+  header .hdr-in{padding-left:max(22px,env(safe-area-inset-left));padding-right:max(22px,env(safe-area-inset-right))}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="hdr-in">
+    <button class="logo" id="logoBtn" aria-label="CZmotos">
+      <span class="logo-ic">🏍️</span>
+      <span class="logo-tx bc">CZ<b>MOTOS</b></span>
+    </button>
+    <nav class="dsk">
+      <button data-go="nosotros">Nosotros</button>
+      <button data-go="motos">Motos</button>
+      <button data-go="triciclos">Triciclos</button>
+      <button data-go="proceso">Cómo funciona</button>
+      <button data-go="financiamiento">Financiamiento</button>
+      <button data-go="faq">FAQ</button>
+      <button data-go="contacto">Contacto</button>
+      <button class="btn-wa" data-wa="">💬 WhatsApp</button>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menú">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="mobnav" id="mobnav">
+    <button data-go="nosotros">Nosotros</button>
+    <button data-go="motos">Motos</button>
+    <button data-go="triciclos">Triciclos</button>
+    <button data-go="proceso">Cómo funciona</button>
+    <button data-go="financiamiento">Financiamiento</button>
+    <button data-go="faq">FAQ</button>
+    <button data-go="contacto">Contacto</button>
+    <button class="btn-wa" data-wa="">💬 Contactar por WhatsApp</button>
+  </div>
+</header>
+
+<section class="hero" id="inicio" style="padding:0">
+  <div class="hero-bar"></div>
+  <div class="hero-moto">
+    <svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="105" cy="250" r="78" fill="none" stroke="#fff" stroke-width="20"/>
+      <circle cx="415" cy="250" r="78" fill="none" stroke="#fff" stroke-width="20"/>
+      <circle cx="105" cy="250" r="18" fill="#fff"/><circle cx="415" cy="250" r="18" fill="#fff"/>
+      <path d="M160 245 L175 130 L240 108 L310 125 L355 170 L385 245" fill="none" stroke="#fff" stroke-width="22" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M240 108 L295 75 L335 85 L340 105" fill="none" stroke="#fff" stroke-width="16" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M175 130 L155 75 L190 55 L200 65" fill="none" stroke="#fff" stroke-width="14" stroke-linejoin="round" stroke-linecap="round"/>
+      <ellipse cx="267" cy="185" rx="55" ry="35" fill="#fff" opacity=".7"/>
+      <rect x="225" y="108" width="80" height="30" rx="10" fill="#fff" opacity=".5"/>
+    </svg>
+  </div>
+  <div class="hero-in">
+    <p class="eyebrow">✈ Miami → Cuba · Motos nuevas en caja</p>
+    <h1>
+      <span class="h-l1 bc">TU MOTO</span>
+      <span class="h-l2 bc">EN CUBA</span>
+      <span class="h-l3 bc">100% seguro · entrega garantizada</span>
+    </h1>
+    <p class="hero-p">Somos especialistas en envío de motos y triciclos desde Miami a todas las provincias de Cuba. Más de <b>500 familias</b> confían en nosotros.</p>
+    <div class="hero-cta">
+      <button class="btn-coral" data-go="motos">Ver catálogo →</button>
+      <button class="btn-wa-lg" data-wa="">💬 WhatsApp</button>
+    </div>
+    <div class="stats">
+      <div><div class="stat-n bc">500+</div><div class="stat-l">Envíos realizados</div></div>
+      <div><div class="stat-n bc">5 años</div><div class="stat-l">De experiencia</div></div>
+      <div><div class="stat-n bc">16</div><div class="stat-l">Provincias cubiertas</div></div>
+      <div><div class="stat-n bc">100%</div><div class="stat-l">Motos nuevas en caja</div></div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0,35 C360,70 1080,0 1440,35 L1440,70 L0,70 Z" fill="#FAF7F2"/></svg>
+  </div>
+</section>
+
+<section id="nosotros" class="cv">
+  <div class="wrap">
+    <div class="nos-grid">
+      <div>
+        <div class="nos-img"><img src="https://picsum.photos/seed/miamisky/580/360" alt="Miami" loading="lazy" decoding="async" width="580" height="290"></div>
+        <div class="nos-badges">
+          <div class="nbadge"><span>🛡️</span><div><h5>100% Asegurado</h5><p>Cada moto viaja con seguro de tránsito</p></div></div>
+          <div class="nbadge"><span>📦</span><div><h5>Nuevas en caja</h5><p>Sin uso, con documentos de fábrica</p></div></div>
+          <div class="nbadge"><span>📍</span><div><h5>Seguimiento</h5><p>Te actualizamos en cada etapa del envío</p></div></div>
+          <div class="nbadge"><span>🤝</span><div><h5>Sin costos ocultos</h5><p>El precio acordado es el que pagas</p></div></div>
+        </div>
+      </div>
+      <div>
+        <p class="sec-ey">Quiénes somos</p>
+        <h2 class="nos-h bc">La empresa que tu familia en Cuba necesita</h2>
+        <p class="nos-p">Somos una empresa familiar con más de <strong>5 años</strong> operando desde Miami. Nacimos de la necesidad propia — queríamos enviar una moto a Cuba y no encontramos a nadie confiable que lo hiciera bien.</p>
+        <p class="nos-p">Hoy ayudamos a cientos de familias cubanas en Estados Unidos a darle movilidad a sus seres queridos en la isla. Cada envío lo tratamos con el mismo cuidado que si fuera para la nuestra.</p>
+        <div style="display:flex;gap:11px;flex-wrap:wrap;margin-top:12px">
+          <button class="btn-coral-sm" data-wa="">💬 Hablar con nosotros</button>
+          <button class="btn-out" data-go="testimonios">Ver testimonios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="motos" class="cv">
+  <div class="wrap-lg">
+    <div class="sec-t">
+      <p class="sec-ey">Catálogo</p>
+      <h2 class="sec-h bc">Motos disponibles</h2>
+      <p class="sec-s">Todas nuevas, en caja original con documentación completa. Elige el modelo ideal para tu familia en Cuba.</p>
+    </div>
+    <div class="cat-grid" id="gridMotos"></div>
+    <div class="cat-more">
+      <p>¿Buscas un modelo específico que no está aquí? Podemos conseguirlo.</p>
+      <button class="btn-out" data-wa="¡Hola! Busco un modelo específico que no veo en el catálogo. ¿Pueden ayudarme?">Consultar otro modelo</button>
+    </div>
+  </div>
+</section>
+
+<section id="triciclos" class="cv">
+  <div class="wrap">
+    <div class="sec-t">
+      <p class="sec-ey">Catálogo</p>
+      <h2 class="sec-h bc">Triciclos disponibles</h2>
+      <p class="sec-s">Para el trabajo, los negocios o el transporte de personas. Los más solicitados en toda Cuba.</p>
+    </div>
+    <div class="cat-grid tric" id="gridTrics"></div>
+  </div>
+</section>
+
+<section id="proceso" class="cv lt">
+  <div class="wrap">
+    <div class="sec-t">
+      <p class="sec-ey">Paso a paso</p>
+      <h2 class="sec-h bc">Cómo funciona</h2>
+      <p class="sec-s">Desde el primer mensaje hasta la entrega — te acompañamos en cada paso del camino.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc"><div class="proc-top"><span class="proc-n bc">01</span><span class="proc-ic">💬</span></div><h4 class="bc">Contáctanos</h4><p>Escríbenos por WhatsApp. Te asesoramos para elegir el modelo ideal según tu presupuesto.</p></div>
+      <div class="proc"><div class="proc-top"><span class="proc-n bc">02</span><span class="proc-ic">💳</span></div><h4 class="bc">Coordinamos el pago</h4><p>Aceptamos efectivo, Zelle, transferencia bancaria o financiamiento para clientes que califican.</p></div>
+      <div class="proc"><div class="proc-top"><span class="proc-n bc">03</span><span class="proc-ic">📋</span></div><h4 class="bc">Documentación</h4><p>Gestionamos toda la documentación de exportación. No tienes que hacer nada de tu parte.</p></div>
+      <div class="proc"><div class="proc-top"><span class="proc-n bc">04</span><span class="proc-ic">🚢</span></div><h4 class="bc">Envío marítimo</h4><p>La moto sale en contenedor desde el puerto de Miami con seguro de tránsito incluido.</p></div>
+      <div class="proc"><div class="proc-top"><span class="proc-n bc">05</span><span class="proc-ic">🏠</span></div><h4 class="bc">Entrega en Cuba</h4><p>Desaduanización y entrega final. Tu familia recibe su moto directamente en su dirección.</p></div>
+    </div>
+    <div style="text-align:center"><button class="btn-coral" data-wa="">💬 Comenzar ahora</button></div>
+  </div>
+</section>
+
+<section id="financiamiento" class="cv">
+  <div class="wrap">
+    <div class="sec-t">
+      <p class="sec-ey">Facilidades de pago</p>
+      <h2 class="sec-h bc">Opciones de financiamiento</h2>
+      <p class="sec-s">Entendemos que no siempre se puede pagar todo de una vez. Tenemos una solución para cada situación.</p>
+    </div>
+    <div class="fin-grid">
+      <div class="fin">
+        <div class="fin-ic">💳</div><span class="fin-tag">Desde 12% APR</span>
+        <h3 class="bc">Crédito Personal</h3>
+        <p>Trabajamos con financieras reconocidas de Florida según tu perfil crediticio.</p>
+        <ul><li>Crédito desde 580 puntos</li><li>2 años de historial crediticio</li><li>Comprobante de ingresos</li><li>Residencia en Florida</li></ul>
+        <button class="btn-fin" data-wa="¡Hola! Me interesa la opción de Crédito Personal. ¿Pueden orientarme?">Consultar esta opción →</button>
+      </div>
+      <div class="fin">
+        <div class="fin-ic">📋</div><span class="fin-tag">Aprobación en 48h</span>
+        <h3 class="bc">ITIN / Sin historial</h3>
+        <p>Para quienes tienen ITIN o SSN pero poco historial de crédito en Estados Unidos.</p>
+        <ul><li>ITIN o SSN válido</li><li>Ingresos demostrables</li><li>Referencias personales</li><li>40% de inicial</li></ul>
+        <button class="btn-fin" data-wa="¡Hola! Me interesa la opción ITIN / Sin historial. ¿Pueden orientarme?">Consultar esta opción →</button>
+      </div>
+      <div class="fin">
+        <div class="fin-ic">🤝</div><span class="fin-tag">Sin intereses</span>
+        <h3 class="bc">Cuotas directas</h3>
+        <p>Plan de pago directo con nosotros, sin banco ni financiera. Efectivo, Zelle o transferencia.</p>
+        <ul><li>50% de inicial</li><li>Saldo en 60 días</li><li>Sin intereses</li><li>Modelos seleccionados</li></ul>
+        <button class="btn-fin" data-wa="¡Hola! Me interesa la opción de Cuotas directas. ¿Pueden orientarme?">Consultar esta opción →</button>
+      </div>
+    </div>
+    <p class="fin-note">Cada caso es diferente. Si tienes dudas, escríbenos y te orientamos sin ningún compromiso.</p>
+  </div>
+</section>
+
+<section id="provincias" class="cv">
+  <div class="sec-t">
+    <p class="sec-ey">Cobertura total</p>
+    <h2 class="sec-h bc">Entregamos en toda Cuba</h2>
+    <p class="sec-s">Contamos con distribuidores locales en cada provincia para garantizar la entrega final a domicilio.</p>
+  </div>
+  <div class="prov-grid" id="gridProv"></div>
+  <div class="prov-note">
+    <span style="flex-shrink:0">⏱️</span>
+    <p><strong>Tiempos indicados desde el arribo al puerto cubano.</strong> El tránsito marítimo desde Miami suma aprox. 3–5 semanas adicionales. Tiempo total: entre <strong>4 y 9 semanas</strong> según la provincia.</p>
+  </div>
+</section>
+
+<section id="testimonios" class="cv lt">
+  <div class="wrap">
+    <div class="sec-t">
+      <p class="sec-ey">Lo que dicen nuestros clientes</p>
+      <h2 class="sec-h bc">Más de 500 familias satisfechas</h2>
+      <p class="sec-s">Palabras reales de personas reales. No hay mejor garantía que esto.</p>
+    </div>
+    <div class="tst-grid">
+      <div class="tst"><div class="tst-st">★★★★★</div><p class="tst-tx">"Mandé una Honda para mi papá y llegó perfectamente en 5 semanas. Me mantuvieron informado en todo momento. 100% recomendado."</p><div class="tst-ft"><div class="tst-n">Roberto Pérez</div><div class="tst-l">Miami → Santiago de Cuba · Marzo 2024</div></div></div>
+      <div class="tst"><div class="tst-st">★★★★★</div><p class="tst-tx">"Primera vez y me daba miedo, pero desde el primer WhatsApp me lo explicaron todo. Mi hermano recibió el triciclo contentísimo."</p><div class="tst-ft"><div class="tst-n">María González</div><div class="tst-l">Hialeah → Camagüey · Enero 2024</div></div></div>
+      <div class="tst"><div class="tst-st">★★★★★</div><p class="tst-tx">"Compré 2 motos a la vez y me dieron descuento. El financiamiento me ayudó a no pagar todo junto. Llegaron sin ningún problema."</p><div class="tst-ft"><div class="tst-n">Carlos Díaz</div><div class="tst-l">Orlando → La Habana · Febrero 2024</div></div></div>
+      <div class="tst"><div class="tst-st">★★★★★</div><p class="tst-tx">"La moto llegó antes de lo esperado, perfectamente empacada. Mi familia en Holguín está contentísima. Volvería a comprar sin dudas."</p><div class="tst-ft"><div class="tst-n">Ana Rodríguez</div><div class="tst-l">Tampa → Holguín · Abril 2024</div></div></div>
+    </div>
+    <div class="tst-cta"><button class="btn-ghost" data-wa="¡Hola! Quiero dejar mi testimonio sobre mi experiencia comprando con ustedes.">Dejar mi testimonio</button></div>
+  </div>
+</section>
+
+<section id="galeria" class="cv">
+  <div class="wrap">
+    <div class="sec-t">
+      <p class="sec-ey">Galería</p>
+      <h2 class="sec-h bc">Entregas reales</h2>
+      <p class="sec-s">Fotos y momentos enviados por nuestros clientes desde distintos puntos de Cuba.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gal"><img src="https://picsum.photos/seed/galent1/480/320" alt="Entrega en La Habana" loading="lazy" decoding="async" width="480" height="175"><span class="gal-l">Entrega en La Habana</span></div>
+      <div class="gal"><img src="https://picsum.photos/seed/galent2/480/320" alt="Llegada en Camagüey" loading="lazy" decoding="async" width="480" height="175"><span class="gal-l">Llegada en Camagüey</span></div>
+      <div class="gal big"><img src="https://picsum.photos/seed/galent3/480/320" alt="Familia recibiendo su moto" loading="lazy" decoding="async" width="480" height="205"><span class="gal-l">Familia recibiendo su moto</span></div>
+      <div class="gal"><img src="https://picsum.photos/seed/galent4/480/320" alt="Triciclo en Holguín" loading="lazy" decoding="async" width="480" height="175"><span class="gal-l">Triciclo en Holguín</span></div>
+      <div class="gal"><img src="https://picsum.photos/seed/galent5/480/320" alt="Empaque en Miami" loading="lazy" decoding="async" width="480" height="175"><span class="gal-l">Empaque en Miami</span></div>
+      <div class="gal big"><img src="https://picsum.photos/seed/galent6/480/320" alt="Entrega en Santiago de Cuba" loading="lazy" decoding="async" width="480" height="205"><span class="gal-l">Entrega en Santiago de Cuba</span></div>
+    </div>
+    <p class="gal-note">¿Quieres ver más? <a href="https://www.facebook.com/profile.php?id=61589113481249" target="_blank" rel="noopener" style="color:var(--coral);text-decoration:none;font-weight:600" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Síguenos en Facebook →</a></p>
+  </div>
+</section>
+
+<section id="faq" class="cv">
+  <div class="faq-wrap">
+    <div class="sec-t">
+      <p class="sec-ey">Respuestas</p>
+      <h2 class="sec-h bc">Preguntas frecuentes</h2>
+      <p class="sec-s">Todo lo que necesitas saber antes de comprar.</p>
+    </div>
+    <div id="faqList"></div>
+    <div class="faq-cta">
+      <div><h5>¿Tienes otra pregunta?</h5><p>Estamos disponibles todos los días por WhatsApp.</p></div>
+      <button class="btn-coral-sm" data-wa="">💬 Hacer mi pregunta</button>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="cv lt">
+  <div class="sec-t">
+    <p class="sec-ey">Contacto</p>
+    <h2 class="sec-h bc">Escríbenos hoy</h2>
+    <p class="sec-s">Déjanos tus datos y te contactamos por WhatsApp para asesorarte sin compromiso.</p>
+  </div>
+  <div class="frm" id="frmBox">
+    <div id="frmFields">
+      <div class="frm-row">
+        <div><label>Tu nombre *</label><input id="fNom" placeholder="Nombre completo"></div>
+        <div><label>Tu teléfono *</label><input id="fTel" placeholder="+1 (305) ..."></div>
+      </div>
+      <div class="frm-fld">
+        <label>Provincia de destino en Cuba *</label>
+        <select id="fProv"><option value="">Selecciona una provincia...</option></select>
+      </div>
+      <div class="frm-fld">
+        <label>Mensaje (opcional)</label>
+        <textarea id="fMsg" placeholder="¿Algún modelo específico o pregunta en mente?"></textarea>
+      </div>
+      <button class="btn-send" id="frmSend">💬 Enviar por WhatsApp</button>
+      <p class="frm-note">Al enviar se abrirá WhatsApp con tu información prellenada.</p>
+    </div>
+    <div class="frm-ok" id="frmOk">
+      <div class="ic">✅</div>
+      <h3 class="bc">¡Mensaje enviado!</h3>
+      <p>Se abrió WhatsApp con tu información. Un asesor te contactará en breve.</p>
+      <button class="btn-ghost" id="frmAgain" style="margin-top:18px">Enviar otro mensaje</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-grid">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span class="logo-ic" style="width:32px;height:32px;font-size:16px">🏍️</span>
+        <span class="logo-tx bc" style="font-size:20px">CZ<b>MOTOS</b></span>
+      </div>
+      <p class="ft-desc">Especialistas en envío de motos y triciclos desde Miami a toda Cuba. Más de 500 familias confían en nosotros.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn-wa" data-wa="">💬 WhatsApp</button>
+        <a href="https://www.facebook.com/profile.php?id=61589113481249" target="_blank" rel="noopener" style="background:#1877F2;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-weight:600;font-size:13px;display:inline-flex;align-items:center;gap:7px;text-decoration:none;transition:background .2s" onmouseover="this.style.background='#1466D2'" onmouseout="this.style.background='#1877F2'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Facebook</a>
+      </div>
+    </div>
+    <div>
+      <h4 class="ft-h">Navegación</h4>
+      <button class="ft-lnk" data-go="nosotros">Nosotros</button>
+      <button class="ft-lnk" data-go="motos">Motos</button>
+      <button class="ft-lnk" data-go="triciclos">Triciclos</button>
+      <button class="ft-lnk" data-go="proceso">Cómo funciona</button>
+      <button class="ft-lnk" data-go="financiamiento">Financiamiento</button>
+      <button class="ft-lnk" data-go="faq">FAQ</button>
+      <button class="ft-lnk" data-go="contacto">Contacto</button>
+    </div>
+    <div>
+      <h4 class="ft-h">Contacto</h4>
+      <p class="ft-txt">Miami, Florida, USA<br>WhatsApp disponible<br>Lunes a domingo<br>9:00 AM – 9:00 PM EST</p>
+        <a href="https://www.facebook.com/profile.php?id=61589113481249" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;color:rgba(255,255,255,.53);font-size:13px;text-decoration:none;margin-top:10px;transition:color .2s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.53)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Síguenos en Facebook</a>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <p>© 2025 CZmotos. Todos los derechos reservados.</p>
+    <p>Miami, FL · Envíos a toda Cuba</p>
+  </div>
+</footer>
+
+<button id="wafloat" aria-label="WhatsApp" data-wa="">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</button>
+
+<!-- ADMIN: LOGIN -->
+<div class="ov" id="ovLogin">
+  <div class="adm-bx sm">
+    <div class="ic">🔐</div>
+    <h2 class="bc">Panel Admin</h2>
+    <p>Ingresa la contraseña para editar el catálogo</p>
+    <input type="password" class="adm-inp" id="admPass" placeholder="Contraseña">
+    <p id="admErr">Contraseña incorrecta</p>
+    <button class="adm-btn" id="admLogin">Entrar</button>
+    <button class="adm-cancel" data-close="ovLogin">Cancelar</button>
+  </div>
+</div>
+
+<!-- ADMIN: PANEL -->
+<div class="ov" id="ovAdmin">
+  <div class="adm-bx">
+    <div class="adm-hd">
+      <span class="bc">🔧 Panel de Administración</span>
+      <button class="adm-exit" data-close="ovAdmin">Salir</button>
+    </div>
+    <div class="adm-tabs">
+      <button class="adm-tab on" id="tabMotos">Motos</button>
+      <button class="adm-tab" id="tabTrics">Triciclos</button>
+      <button class="adm-add" id="admAdd">+ Agregar</button>
+    </div>
+    <div class="adm-list" id="admList"></div>
+    <div class="adm-tip">💡 Los cambios se guardan en tu Google Sheet y se publican para todos los visitantes en segundos. Las fotos se suben desde tu teléfono o computadora y se guardan en tu Google Drive automáticamente.</div>
+  </div>
+</div>
+
+<!-- ADMIN: EDITAR -->
+<div class="ov" id="ovEdit">
+  <div class="adm-bx">
+    <div class="adm-form">
+      <div class="adm-form-hd">
+        <h3 class="bc" id="edTitle">Editar</h3>
+        <button class="adm-x" data-close="ovEdit">✕</button>
+      </div>
+      <div class="adm-grid">
+        <div class="adm-fld"><label>Nombre *</label><input class="adm-inp" id="eNom" placeholder="Ej: Honda CB125F"></div>
+        <div class="adm-fld"><label>Precio USD *</label><input class="adm-inp" id="ePrice" type="number" placeholder="1850"></div>
+        <div class="adm-fld"><label>Etiqueta (ej: ⭐ Popular)</label><input class="adm-inp" id="eBadge"></div>
+        <div class="adm-fld"><label>Tiempo de entrega</label><input class="adm-inp" id="eDlv" placeholder="4–6 semanas"></div>
+        <div class="adm-fld photos-fld">
+          <label>Fotos (hasta 5 — la primera es la principal)</label>
+          <div class="photos-grid" id="phGrid"></div>
+          <p class="ph-hint">Toca «+ Foto» y elige las imágenes desde tu teléfono o computadora. Se comprimen y suben solas.</p>
+          <p id="upStatus">⏳ Subiendo foto...</p>
+          <input type="file" id="phInput" accept="image/*" multiple style="display:none">
+        </div>
+        <div class="adm-fld full"><label>Descripción</label><textarea class="adm-inp" id="eDesc"></textarea></div>
+        <div class="adm-fld"><label>Característica 1</label><input class="adm-inp" id="eS0" placeholder="Motor 125cc"></div>
+        <div class="adm-fld"><label>Característica 2</label><input class="adm-inp" id="eS1" placeholder="5 velocidades"></div>
+        <div class="adm-fld"><label>Característica 3</label><input class="adm-inp" id="eS2" placeholder="11 HP"></div>
+        <div class="adm-fld"><label>Característica 4</label><input class="adm-inp" id="eS3" placeholder="100 km/h"></div>
+        <div class="adm-chk"><input type="checkbox" id="eAvail" checked><label for="eAvail">Disponible (con stock)</label></div>
+      </div>
+      <div class="adm-form-ft">
+        <button class="adm-cn" data-close="ovEdit">Cancelar</button>
+        <button class="adm-sv" id="edSave">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════
+   CONFIGURACIÓN — cambia estos tres valores
+════════════════════════════════════════════════ */
+const WA_NUM = "19708253676";        // ← Número de WhatsApp (sin + ni espacios)
+const ADMIN_PASS = "CZmotos2024";    // ← Contraseña admin (DEBE ser igual al TOKEN del Apps Script)
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzeEZgNNuwOT-bVANvLrODSHmvQnYmnbJ1gDECSUrvh6WVnbzViW_KeIwLHSQG10XSa6w/exec"; // ← URL del Apps Script (termina en /exec)
+
+/* ══════════ PRODUCTOS DE EJEMPLO (se ven solo si el Sheet no está conectado aún) ══════════ */
+const DEMO = [
+  {id:"1",tipo:"moto",name:"Honda CB125F",price:1850,badge:"⭐ Más popular",badgeClr:"#D63B1F",delivery:"4–6 semanas",description:"La más vendida. Bajo consumo, fácil mantenimiento y repuestos disponibles en toda Cuba.",specs:["Motor 125cc","5 velocidades","11 HP","100 km/h"],images:["https://picsum.photos/seed/cb125f/480/300","https://picsum.photos/seed/cb125b/480/300","https://picsum.photos/seed/cb125c/480/300"],available:true},
+  {id:"2",tipo:"moto",name:"Italika FT150",price:1450,badge:"💰 Mejor precio",badgeClr:"#1A7A4E",delivery:"4–6 semanas",description:"Excelente relación calidad-precio. Robusta y confiable para caminos difíciles.",specs:["Motor 150cc","5 velocidades","12.5 HP","110 km/h"],images:["https://picsum.photos/seed/ft150it/480/300","https://picsum.photos/seed/ft150b/480/300"],available:true},
+  {id:"3",tipo:"triciclo",name:"Triciclo de Carga 200cc",price:2800,badge:"🏭 Ideal negocios",badgeClr:"#6B3F9E",delivery:"6–8 semanas",description:"Para el trabajo y el negocio. Transporta mercancías, materiales y carga comercial.",specs:["Motor 200cc","Carga hasta 500 kg","Plataforma 120×100cm","Cabina abierta"],images:["https://picsum.photos/seed/tric200c/480/300"],available:true},
+  {id:"4",tipo:"triciclo",name:"Triciclo de Pasajeros 150cc",price:3200,badge:"🚕 Ideal taxi",badgeClr:"#C4852A",delivery:"6–8 semanas",description:"Cabina cerrada con techo. El más usado como taxi en ciudades cubanas.",specs:["Motor 150cc","2 pasajeros + conductor","Techo cerrado","Banco tapizado"],images:["https://picsum.photos/seed/tric150t/480/300"],available:true}
+];
+const PLACEHOLDER = "https://picsum.photos/seed/motofb/480/300";
+const PROVINCIAS = [["La Habana","3–5 días"],["Artemisa","3–5 días"],["Mayabeque","3–5 días"],["Matanzas","4–6 días"],["Pinar del Río","4–6 días"],["Cienfuegos","4–6 días"],["Villa Clara","5–7 días"],["Sancti Spíritus","5–7 días"],["Ciego de Ávila","5–7 días"],["Camagüey","5–7 días"],["Las Tunas","6–8 días"],["Holguín","6–8 días"],["Granma","6–8 días"],["Santiago de Cuba","7–9 días"],["Guantánamo","7–9 días"],["Isla de la Juventud","7–10 días"]];
+const FAQS = [
+  ["¿Cómo funciona el proceso de compra?","Nos contactas por WhatsApp, eliges el modelo, coordinamos el pago y gestionamos toda la documentación de exportación y el envío hasta la entrega en Cuba. No tienes que hacer nada más."],
+  ["¿Cuánto tiempo tarda en llegar?","Entre 4 y 9 semanas según la provincia. La Habana y las provincias occidentales son más rápidas. Santiago de Cuba y Guantánamo tardan un poco más por su distancia geográfica."],
+  ["¿Qué documentos necesito?","Solo tu ID de Florida o pasaporte, y la dirección completa con el carné de identidad del destinatario en Cuba. Nosotros preparamos toda la documentación de exportación."],
+  ["¿Las motos tienen garantía?","Son nuevas, en caja original con documentos de fábrica y factura de compra. La garantía en Cuba depende de la disponibilidad de servicio técnico local por marca."],
+  ["¿Puedo pagar a plazos?","Sí. Trabajamos con varias financieras y también ofrecemos planes de pago propios con 50% de inicial. Escríbenos por WhatsApp para evaluar tu caso."],
+  ["¿Qué pasa si la moto llega dañada?","Todas las motos viajan aseguradas. En caso de daño en tránsito, activamos el seguro sin costo adicional. Nunca dejamos a un cliente sin solución."],
+  ["¿Envían a todas las provincias?","Sí, cubrimos las 15 provincias y la Isla de la Juventud. Contamos con distribuidores locales en cada punto del país."],
+  ["¿Por qué confiar en ustedes?","Más de 500 envíos en 5 años de operación. Testimonios reales y fotos de entregas verificables. Búscanos en redes — los clientes hablan por nosotros."]
+];
+
+/* ══════════ UTILIDADES ══════════ */
+const $id = (i) => document.getElementById(i);
+const esc = (s) => String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+const fmt = (n) => "$" + Number(n||0).toLocaleString("en-US");
+const wa = (msg) => window.open("https://wa.me/"+WA_NUM+"?text="+encodeURIComponent(msg||"¡Hola! Me interesa comprar una moto o triciclo para enviar a Cuba. ¿Pueden ayudarme?"),"_blank");
+const hasSheet = () => SCRIPT_URL && SCRIPT_URL.indexOf("/exec") > -1;
+const imgsOf = (it) => (it.images && it.images.length) ? it.images : [PLACEHOLDER];
+
+/* ══════════ ESTADO ══════════ */
+let motos = [], trics = [];
+function splitData(list){
+  motos = list.filter(p => p.tipo !== "triciclo");
+  trics = list.filter(p => p.tipo === "triciclo");
+}
+/* Pintado instantáneo desde la última copia guardada en el navegador */
+try {
+  const c = localStorage.getItem("cz_cache");
+  if(c) splitData(JSON.parse(c));
+} catch(e){}
+if(!motos.length && !trics.length) splitData(DEMO);
+
+/* ══════════ CONEXIÓN CON GOOGLE SHEETS ══════════ */
+async function loadProducts(){
+  if(!hasSheet()) return;
+  try{
+    const r = await fetch(SCRIPT_URL);
+    const d = await r.json();
+    if(d && d.ok && Array.isArray(d.productos)){
+      splitData(d.productos);
+      try{ localStorage.setItem("cz_cache", JSON.stringify(d.productos)); }catch(e){}
+      renderCatalog();
+      if($id("ovAdmin").classList.contains("show")) renderAdmin();
+    }
+  }catch(e){ /* Silencioso: en local (file://) falla por CORS — en Vercel (https) funciona */ }
+}
+async function api(payload){
+  const r = await fetch(SCRIPT_URL, {
+    method: "POST",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(Object.assign({}, payload, { token: ADMIN_PASS }))
+  });
+  return r.json();
+}
+
+/* ══════════ TARJETAS CON CARRUSEL DE FOTOS ══════════ */
+function cardHTML(it){
+  const imgs = imgsOf(it);
+  const multi = imgs.length > 1;
+  const specs = (it.specs||[]).filter(Boolean).map(s=>'<span class="spec">'+esc(s)+'</span>').join("");
+  const dots = multi ? '<div class="ci-dots">'+imgs.map((_,i)=>'<button class="ci-dot'+(i===0?' on':'')+'" data-d="'+i+'" aria-label="Foto '+(i+1)+'"></button>').join("")+'</div>' : '';
+  const navs = multi ? '<button class="ci-nav ci-prev" aria-label="Anterior">‹</button><button class="ci-nav ci-next" aria-label="Siguiente">›</button>' : '';
+  return '<article class="card">'
+    +'<div class="card-img" data-idx="0" data-imgs="'+esc(JSON.stringify(imgs))+'">'
+    +'<img class="ci-img" src="'+esc(imgs[0])+'" alt="'+esc(it.name)+'" loading="lazy" decoding="async" width="480" height="205" onerror="this.src=\''+PLACEHOLDER+'\'">'
+    + navs + dots
+    +(it.badge?'<span class="badge" style="background:'+esc(it.badgeClr||"#D63B1F")+'">'+esc(it.badge)+'</span>':'')
+    +(!it.available?'<div class="nostock">Sin stock</div>':'')
+    +'</div><div class="card-bd">'
+    +'<h3 class="card-n bc">'+esc(it.name)+'</h3>'
+    +'<p class="card-d">'+esc(it.description)+'</p>'
+    +'<div class="specs">'+specs+'</div>'
+    +'<div class="dlv"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D63B1F" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Entrega estimada: <strong>'+esc(it.delivery)+'</strong></div>'
+    +'<div class="card-ft"><div><div class="price-l">Precio desde</div><div class="price bc">'+fmt(it.price)+'</div></div>'
+    +'<button class="btn-cns" data-wa="¡Hola! Me interesa la '+esc(it.name)+' ('+fmt(it.price)+'). ¿Pueden darme más información?">💬 Consultar</button>'
+    +'</div></div></article>';
+}
+function renderCatalog(){
+  const empty = '<p class="cat-empty">Pronto publicaremos nuevos modelos. Consúltanos por WhatsApp.</p>';
+  $id("gridMotos").innerHTML = motos.length ? motos.map(cardHTML).join("") : empty;
+  $id("gridTrics").innerHTML = trics.length ? trics.map(cardHTML).join("") : empty;
+}
+
+/* Navegación del carrusel (delegada = un solo listener para todo el catálogo) */
+function ciGoto(box, idx){
+  const imgs = JSON.parse(box.dataset.imgs);
+  const i = ((idx % imgs.length) + imgs.length) % imgs.length;
+  box.dataset.idx = i;
+  const img = box.querySelector(".ci-img");
+  img.classList.add("fading");
+  img.src = imgs[i];
+  if(img.complete) img.classList.remove("fading");
+  else img.onload = () => img.classList.remove("fading");
+  box.querySelectorAll(".ci-dot").forEach((d,k)=>d.classList.toggle("on", k===i));
+  /* Precarga la siguiente foto para que el cambio sea instantáneo */
+  const nx = new Image(); nx.src = imgs[(i+1)%imgs.length];
+}
+
+/* Deslizar con el dedo en el celular */
+let swX = null, swBox = null;
+document.addEventListener("touchstart",(e)=>{
+  const box = e.target.closest(".card-img");
+  if(box && box.querySelector(".ci-dot")){ swX = e.touches[0].clientX; swBox = box; }
+},{passive:true});
+document.addEventListener("touchend",(e)=>{
+  if(swX===null || !swBox) return;
+  const dx = e.changedTouches[0].clientX - swX;
+  if(Math.abs(dx) > 42) ciGoto(swBox, Number(swBox.dataset.idx) + (dx<0?1:-1));
+  swX = null; swBox = null;
+},{passive:true});
+
+/* ══════════ RENDER PROVINCIAS / FAQ / SELECT ══════════ */
+$id("gridProv").innerHTML = PROVINCIAS.map(p=>'<div class="prov"><b>'+p[0]+'</b><span>'+p[1]+'</span></div>').join("");
+$id("faqList").innerHTML = FAQS.map((f,i)=>'<div class="faq"><button class="faq-q"><h4>'+f[0]+'</h4><span class="chev">▼</span></button><div class="faq-a"><p>'+f[1]+'</p></div></div>').join("");
+$id("fProv").innerHTML += PROVINCIAS.map(p=>'<option value="'+p[0]+'">'+p[0]+'</option>').join("");
+renderCatalog();
+loadProducts();
+
+/* ══════════ EVENTOS GLOBALES (delegación) ══════════ */
+document.addEventListener("click",(e)=>{
+  const prev = e.target.closest(".ci-prev");
+  if(prev){ ciGoto(prev.closest(".card-img"), Number(prev.closest(".card-img").dataset.idx)-1); return; }
+  const next = e.target.closest(".ci-next");
+  if(next){ ciGoto(next.closest(".card-img"), Number(next.closest(".card-img").dataset.idx)+1); return; }
+  const dot = e.target.closest(".ci-dot");
+  if(dot){ ciGoto(dot.closest(".card-img"), Number(dot.dataset.d)); return; }
+  const go = e.target.closest("[data-go]");
+  if(go){ document.getElementById(go.dataset.go)?.scrollIntoView({behavior:"smooth"}); $id("mobnav").classList.remove("open"); return; }
+  const w = e.target.closest("[data-wa]");
+  if(w){ wa(w.dataset.wa); return; }
+  const cl = e.target.closest("[data-close]");
+  if(cl){ $id(cl.dataset.close).classList.remove("show"); return; }
+  const fq = e.target.closest(".faq-q");
+  if(fq){ fq.parentElement.classList.toggle("open"); return; }
+});
+
+$id("burger").addEventListener("click",()=> $id("mobnav").classList.toggle("open"));
+
+/* ══════════ SCROLL FLUIDO (passive + requestAnimationFrame) ══════════ */
+let ticking = false;
+const hdr = $id("hdr"), waf = $id("wafloat");
+window.addEventListener("scroll",()=>{
+  if(ticking) return;
+  ticking = true;
+  requestAnimationFrame(()=>{
+    const y = window.scrollY;
+    hdr.classList.toggle("sc", y > 50);
+    waf.classList.toggle("vis", y > 280);
+    ticking = false;
+  });
+},{passive:true});
+
+/* ══════════ FORMULARIO ══════════ */
+$id("frmSend").addEventListener("click",()=>{
+  const n=$id("fNom").value.trim(), t=$id("fTel").value.trim(), p=$id("fProv").value, m=$id("fMsg").value.trim();
+  if(!n||!t||!p){ alert("Por favor completa nombre, teléfono y provincia."); return; }
+  wa("¡Hola! Soy "+n+", mi teléfono es "+t+". Quiero enviar a la provincia de "+p+". "+m);
+  $id("frmFields").style.display="none"; $id("frmOk").classList.add("show");
+});
+$id("frmAgain").addEventListener("click",()=>{ $id("frmFields").style.display="block"; $id("frmOk").classList.remove("show"); });
+
+/* ══════════ ADMIN ══════════ */
+let taps=0, tapT=null, admTab="motos", editing=null, uploading=0;
+
+$id("logoBtn").addEventListener("click",()=>{
+  taps++; clearTimeout(tapT); tapT=setTimeout(()=>taps=0,2500);
+  if(taps>=5){ taps=0; $id("ovLogin").classList.add("show"); $id("admPass").value=""; $id("admErr").style.display="none"; setTimeout(()=>$id("admPass").focus(),60); }
+});
+function tryLogin(){
+  if($id("admPass").value===ADMIN_PASS){
+    $id("ovLogin").classList.remove("show");
+    $id("ovAdmin").classList.add("show");
+    if(!hasSheet()) alert("⚠️ Aún no está configurada la URL del Google Apps Script (SCRIPT_URL) en el código. Los cambios NO se guardarán hasta hacerlo. Mira el archivo de instrucciones.");
+    renderAdmin();
+    loadProducts();
+  } else $id("admErr").style.display="block";
+}
+$id("admLogin").addEventListener("click",tryLogin);
+$id("admPass").addEventListener("keydown",e=>{ if(e.key==="Enter") tryLogin(); });
+
+$id("tabMotos").addEventListener("click",()=>{ admTab="motos"; $id("tabMotos").classList.add("on"); $id("tabTrics").classList.remove("on"); renderAdmin(); });
+$id("tabTrics").addEventListener("click",()=>{ admTab="trics"; $id("tabTrics").classList.add("on"); $id("tabMotos").classList.remove("on"); renderAdmin(); });
+
+function renderAdmin(){
+  const items = admTab==="motos" ? motos : trics;
+  if(!items.length){ $id("admList").innerHTML='<p class="adm-empty">No hay artículos. ¡Agrega el primero!</p>'; return; }
+  $id("admList").innerHTML = items.map(it=>{
+    const imgs = imgsOf(it);
+    return '<div class="adm-row">'
+    +'<div class="adm-thumb"><img src="'+esc(imgs[0])+'" alt="" loading="lazy" onerror="this.style.display=\'none\'">'
+    +(it.images && it.images.length>1 ? '<span class="nfotos">📷'+it.images.length+'</span>' : '')
+    +'</div>'
+    +'<div class="adm-info"><div class="adm-name">'+esc(it.name||"(Sin nombre)")+'</div>'
+    +'<div class="adm-meta"><b>'+fmt(it.price)+'</b> · '+esc(it.delivery||"")+(!it.available?'<span class="adm-ns">Sin stock</span>':'')+'</div></div>'
+    +'<div class="adm-act"><button class="adm-edit" data-eid="'+esc(it.id)+'">✏️ Editar</button><button class="adm-del" data-did="'+esc(it.id)+'">🗑️</button></div>'
+    +'</div>';
+  }).join("");
+}
+
+$id("admList").addEventListener("click", async (e)=>{
+  const ed = e.target.closest("[data-eid]");
+  if(ed){ openEdit(ed.dataset.eid); return; }
+  const dl = e.target.closest("[data-did]");
+  if(dl && confirm("¿Eliminar este artículo del catálogo?")){
+    if(!hasSheet()){ alert("Configura primero la URL del Apps Script (SCRIPT_URL)."); return; }
+    dl.disabled = true; dl.textContent = "⏳";
+    try{
+      const res = await api({ action:"delete", id: dl.dataset.did });
+      if(res.ok){ await loadProducts(); renderAdmin(); }
+      else { alert("Error: " + (res.error||"no se pudo eliminar")); dl.disabled=false; dl.textContent="🗑️"; }
+    }catch(err){ alert("Error de conexión. Revisa tu internet."); dl.disabled=false; dl.textContent="🗑️"; }
+  }
+});
+
+$id("admAdd").addEventListener("click",()=>openEdit(null));
+
+function openEdit(id){
+  const items = admTab==="motos" ? motos : trics;
+  editing = id===null
+    ? {id:String(Date.now()),tipo:admTab==="motos"?"moto":"triciclo",name:"",price:0,badge:"",badgeClr:"#D63B1F",delivery:"",description:"",specs:["","","",""],images:[],available:true,_new:true}
+    : JSON.parse(JSON.stringify(items.find(x=>String(x.id)===String(id))));
+  if(!editing.images) editing.images = [];
+  $id("edTitle").textContent = (editing._new?"Agregar":"Editar")+" "+(admTab==="motos"?"moto":"triciclo");
+  $id("eNom").value=editing.name||""; $id("ePrice").value=editing.price||"";
+  $id("eBadge").value=editing.badge||""; $id("eDlv").value=editing.delivery||"";
+  $id("eDesc").value=editing.description||"";
+  const sp=editing.specs||["","","",""];
+  for(let i=0;i<4;i++) $id("eS"+i).value=sp[i]||"";
+  $id("eAvail").checked=!!editing.available;
+  renderSlots();
+  $id("ovEdit").classList.add("show");
+}
+
+/* ── FOTOS: 5 espacios, subida directa desde el dispositivo ── */
+function renderSlots(){
+  const g = $id("phGrid");
+  let html = "";
+  for(let i=0;i<5;i++){
+    const url = editing.images[i];
+    if(url === "__up__"){
+      html += '<div class="ph-slot"><div class="ph-up">⏳ Subiendo...</div></div>';
+    } else if(url){
+      html += '<div class="ph-slot filled'+(i===0?' first':'')+'"><img src="'+esc(url)+'" alt=""><button class="ph-rm" data-rm="'+i+'" type="button">✕</button></div>';
+    } else if(i === editing.images.length){
+      html += '<div class="ph-slot"><button class="ph-add" type="button" id="phAddBtn"><span>+</span>Foto</button></div>';
+    } else {
+      html += '<div class="ph-slot"></div>';
+    }
+  }
+  g.innerHTML = html;
+}
+$id("phGrid").addEventListener("click",(e)=>{
+  if(e.target.closest("#phAddBtn")){ $id("phInput").click(); return; }
+  const rm = e.target.closest("[data-rm]");
+  if(rm){ editing.images.splice(Number(rm.dataset.rm),1); renderSlots(); }
+});
+
+/* Comprime la foto en el navegador antes de subirla (rápido y ahorra datos) */
+function compressImage(file){
+  return new Promise((resolve,reject)=>{
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = ()=>{
+      const MAX = 1000;
+      let w = img.width, h = img.height;
+      if(w > MAX){ h = Math.round(h*MAX/w); w = MAX; }
+      if(h > MAX){ w = Math.round(w*MAX/h); h = MAX; }
+      const c = document.createElement("canvas");
+      c.width = w; c.height = h;
+      c.getContext("2d").drawImage(img,0,0,w,h);
+      URL.revokeObjectURL(url);
+      resolve(c.toDataURL("image/jpeg",0.82));
+    };
+    img.onerror = ()=>{ URL.revokeObjectURL(url); reject(new Error("No se pudo leer la imagen")); };
+    img.src = url;
+  });
+}
+
+$id("phInput").addEventListener("change", async (e)=>{
+  const files = Array.from(e.target.files||[]);
+  e.target.value = "";
+  if(!files.length) return;
+  if(!hasSheet()){ alert("Configura primero la URL del Apps Script (SCRIPT_URL) para poder subir fotos."); return; }
+  for(const file of files){
+    if(editing.images.filter(x=>x!=="__up__").length + editing.images.filter(x=>x==="__up__").length >= 5){ alert("Máximo 5 fotos por publicación."); break; }
+    const pos = editing.images.length;
+    editing.images.push("__up__");
+    renderSlots();
+    uploading++; $id("upStatus").style.display="block"; $id("edSave").disabled = true;
+    try{
+      const dataUrl = await compressImage(file);
+      const b64 = dataUrl.split(",")[1];
+      const res = await api({ action:"upload", filename:"czmotos-"+Date.now()+".jpg", data:b64 });
+      if(res.ok && res.url) editing.images[pos] = res.url;
+      else { editing.images.splice(pos,1); alert("No se pudo subir la foto: "+(res.error||"error desconocido")); }
+    }catch(err){
+      editing.images.splice(editing.images.indexOf("__up__"),1);
+      alert("Error subiendo la foto. Revisa tu internet.");
+    }
+    uploading--;
+    if(uploading<=0){ uploading=0; $id("upStatus").style.display="none"; $id("edSave").disabled = false; }
+    renderSlots();
+  }
+});
+
+$id("edSave").addEventListener("click", async ()=>{
+  if(!$id("eNom").value.trim()){ alert("El nombre es obligatorio."); return; }
+  if(uploading > 0){ alert("Espera a que terminen de subir las fotos."); return; }
+  if(!hasSheet()){ alert("Configura primero la URL del Apps Script (SCRIPT_URL) en el código."); return; }
+  const item = {
+    id: editing.id,
+    tipo: editing.tipo || (admTab==="motos"?"moto":"triciclo"),
+    name: $id("eNom").value.trim(),
+    price: Number($id("ePrice").value)||0,
+    badge: $id("eBadge").value.trim(),
+    badgeClr: editing.badgeClr||"#D63B1F",
+    delivery: $id("eDlv").value.trim(),
+    description: $id("eDesc").value.trim(),
+    specs: [0,1,2,3].map(i=>$id("eS"+i).value.trim()).filter(Boolean),
+    images: editing.images.filter(x=>x && x!=="__up__"),
+    available: $id("eAvail").checked
+  };
+  const btn = $id("edSave");
+  btn.disabled = true; btn.textContent = "Guardando...";
+  try{
+    const res = await api({ action: editing._new ? "add" : "update", producto: item });
+    if(res.ok){
+      $id("ovEdit").classList.remove("show");
+      await loadProducts();
+      renderAdmin();
+    } else alert("Error: " + (res.error||"no se pudo guardar"));
+  }catch(err){ alert("Error de conexión. Revisa tu internet y la URL del Apps Script."); }
+  btn.disabled = false; btn.textContent = "Guardar cambios";
+});
+</script>
+</body>
+</html>
